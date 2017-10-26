@@ -18,10 +18,31 @@ var collection = {
 		album: 'ABBA Gold'
 	}
 };
-// Keep a copy of the collection for tests
-var collectionCopy = JSON.parse(JSON.stringify(collection));
 
-// Only change code below this line
 function updateRecords(id, prop, value) {
-	return collection;
+	if (prop === 'tracks') {
+		if (value == '') {
+			delete collection[id][prop];
+			return collection[id];
+		} else if (prop in collection[id]) {
+			collection[id][prop].push(value);
+			return collection[id];
+		} else {
+			collection[id][prop] = [];
+			collection[id][prop].push(value);
+			return collection[id];
+		}
+	} else if (prop in collection[id]) {
+		if (value === '') {
+			delete collection[id][prop];
+			return collection[id];
+		} else {
+			collection[id][prop] = value;
+			return collection[id];
+		}
+	} else {
+		collection[id][prop] = value;
+		return collection[id];
+	}
 }
+
