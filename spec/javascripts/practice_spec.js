@@ -8,36 +8,42 @@
 
 describe('updateRecords', function() {
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(5439, 'artist', 'ABBA')).toEqual('artist: abba');
+		expect(updateRecords(5439, 'artist', 'ABBA')).toEqual({ album: 'ABBA Gold', artist: 'ABBA' });
 	});
 
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(5439, 'tracks', 'Take a Chance on Me')).toEqual(
-			'tracks should have "Take a Chance on Me" as the last element'
-		);
+		expect(updateRecords(5439, 'tracks', 'Take a Chance on Me')).toEqual({
+			album: 'ABBA Gold',
+			artist: 'ABBA',
+			tracks: ['Take a Chance on Me']
+		});
 	});
 
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(2548, 'artist', '')).toEqual('artist should not be set');
+		expect(updateRecords(2548, 'artist', '')).toEqual({
+			album: 'Slippery When Wet',
+			tracks: ['Let It Rock', 'You Give Love a Bad Name']
+		});
 	});
 
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(1245, 'tracks', 'Addicted to Love')).toEqual(
-			'tracks should have "Addicted to Love" as the last element.'
-		);
+		expect(updateRecords(1245, 'tracks', 'Addicted to Love')).toEqual({
+			artist: 'Robert Palmer',
+			tracks: ['Addicted to Love']
+		});
 	});
 
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(2468, 'tracks', 'Free')).toEqual('artist should not be set');
+		expect(updateRecords(2468, 'tracks', 'Free')).toEqual({
+			album: '1999',
+			artist: 'Prince',
+			tracks: ['1999', 'Little Red Corvette', 'Free']
+		});
 	});
 
 	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(2548, 'artist', '')).toEqual('tracks should have "1999" as the first element.');
-	});
-
-	it('takes an Id, prop and value to update database', function() {
-		expect(updateRecords(2548, 'tracks', '')).toEqual('tracks should not be set');
+		expect(updateRecords(2548, 'tracks', '')).toEqual({ album: 'Slippery When Wet' });
 	});
 });
 
-// check how to test an object at the end
+
