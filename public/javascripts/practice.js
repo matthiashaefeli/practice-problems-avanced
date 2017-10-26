@@ -46,3 +46,13 @@ function updateRecords(id, prop, value) {
 	}
 }
 
+function sym() {
+	var newArray = [];
+	for (var i = 0; i < arguments.length; i++) {
+		for (var index = 0; index < arguments[i].length; index++) {
+			newArray.push(arguments[i][index]);
+		}
+	}
+}
+
+// end of file
