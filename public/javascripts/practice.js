@@ -46,13 +46,50 @@ function updateRecords(id, prop, value) {
 	}
 }
 
-function sym() {
-	var newArray = [];
-	for (var i = 0; i < arguments.length; i++) {
-		for (var index = 0; index < arguments[i].length; index++) {
-			newArray.push(arguments[i][index]);
+function concatArray(arrayOne, arrayTwo) {
+	var finalArray = arrayOne.concat(arrayTwo);
+	return finalArray;
+}
+
+function countValue(array, value) {
+	var count = 0;
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] == value) {
+			count++;
 		}
 	}
+	if (count > 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function sortNumber(a, b) {
+	return a - b;
+}
+
+function buildResult(array) {
+	var result = [];
+	for (var check = 0; check < array.length; check++) {
+		if (countValue(array, array[check]) === false) {
+			result.push(array[check]);
+		}
+	}
+	return result.sort(sortNumber);
+}
+
+function sym() {
+	var arrayArrays = [];
+	var newArray = [];
+	for (var index = 0; index < arguments.length; index++) {
+		arrayArrays.push([...new Set(arguments[index])]);
+	}
+
+	for (var i = 0; i < arrayArrays.length; i++) {
+		newArray = buildResult(concatArray(newArray, arrayArrays[i]));
+	}
+	return newArray;
 }
 
 // end of file
