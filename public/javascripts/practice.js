@@ -92,4 +92,17 @@ function sym() {
 	return newArray;
 }
 
+function checkCashRegister(price, cash, cid) {
+	var dif = cash - price;
+	var cidHash = {};
+	for (var i = 0; i < cid.length; i++) {
+		cidHash[cid[i][0]] = cid[i][1];
+	}
+	var valuesHash = Object.values(cidHash);
+	var total = 0;
+	for (var index = 0; index < valuesHash.length; index++) {
+		total += valuesHash[index];
+	}
+	debugger;
+}
 // end of file
