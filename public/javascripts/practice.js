@@ -101,8 +101,12 @@ function checkCashRegister(price, cash, cid) {
 	var valuesHash = Object.values(cidHash);
 	var total = 0;
 	for (var index = 0; index < valuesHash.length; index++) {
-		total += valuesHash[index];
+		total += valuesHash[index] * 100;
 	}
-	debugger;
+	if (total / 100 < dif) {
+		return 'Insufficient Funds';
+	} else if (total / 100 === dif) {
+		return 'Closed';
+	}
 }
 // end of file
