@@ -142,8 +142,25 @@ function changeMoney(cidHash, change, resultHash) {
 	return resultHash;
 }
 
+function total(object) {
+	var valuesHash = Object.values(object);
+	var total = 0;
+	for (var index = 0; index < valuesHash.length; index++) {
+		total += valuesHash[index] * 100;
+	}
+	return total / 100;
+}
+
+function buildObject(array) {
+	var cidHash = {};
+	for (var i = 0; i < array.length; i++) {
+		cidHash[array[i][0]] = array[i][1];
+	}
+	return cidHash;
+}
+
 function checkCashRegister(price, cash, cid) {
-	var resultHash = new Object();
+	var resultHash = {};
 	resultHash['PENNY'] = 0;
 	resultHash['NICKEL'] = 0;
 	resultHash['DIME'] = 0;
@@ -155,21 +172,23 @@ function checkCashRegister(price, cash, cid) {
 	resultHash['ONE HUNDRED'] = 0;
 
 	var change = cash - price;
-	var cidHash = {};
-	for (var i = 0; i < cid.length; i++) {
-		cidHash[cid[i][0]] = cid[i][1];
-	}
-	var valuesHash = Object.values(cidHash);
-	var total = 0;
-	for (var index = 0; index < valuesHash.length; index++) {
-		total += valuesHash[index] * 100;
-	}
-	if (total / 100 < change) {
+	var cidHash = buildObject(cid);
+	if (total(cidHash) < change) {
 		return 'Insufficient Funds';
-	} else if (total / 100 === change) {
+	} else if (total(cidHash) === change) {
 		return 'Closed';
 	} else {
-		return changeMoney(cidHash, change, resultHash);
+		var hash = changeMoney(cidHash, change, resultHash);
+		if (total(hash) < change) {
+			return 'Insufficient Funds';
+		}
+		var resArray = [];
+		for (var key in hash) {
+			if (hash[key] > 0) {
+				resArray.push([key, hash[key]]);
+			}
+		}
+		return resArray.reverse();
 	}
 }
 // end of file

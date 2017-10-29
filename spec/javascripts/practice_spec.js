@@ -91,7 +91,7 @@ describe('checkCashRegister', function() {
 				['TWENTY', 60.0],
 				['ONE HUNDRED', 100.0]
 			])
-		).toEqual(['QUARTER', 0.5]);
+		).toEqual([['QUARTER', 0.5]]);
 	});
 	it('return change in coin and bills, sorted in highest to lowest order', function() {
 		expect(
@@ -145,5 +145,20 @@ describe('checkCashRegister', function() {
 				['ONE HUNDRED', 0]
 			])
 		).toEqual('Closed');
+	});
+	it('should return "Closed"', function() {
+		expect(
+			checkCashRegister(19.5, 20.0, [
+				['PENNY', 0.01],
+				['NICKEL', 0],
+				['DIME', 0],
+				['QUARTER', 0],
+				['ONE', 1.0],
+				['FIVE', 0],
+				['TEN', 0],
+				['TWENTY', 0],
+				['ONE HUNDRED', 0]
+			])
+		).toEqual('Insufficient Funds');
 	});
 });
