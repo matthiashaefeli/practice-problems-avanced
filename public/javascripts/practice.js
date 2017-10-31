@@ -94,47 +94,47 @@ function sym() {
 
 function changeMoney(cidHash, change, resultHash) {
 	if (change >= 100 && cidHash['ONE HUNDRED'] > 0) {
-		change = change - 100;
+		change -= 100;
 		cidHash['ONE HUNDRED'] -= 100;
 		resultHash['ONE HUNDRED'] += 100;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 20 && cidHash['TWENTY'] > 0) {
-		change = change - 20;
+		change -= 20;
 		cidHash['TWENTY'] -= 20;
 		resultHash['TWENTY'] += 20;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 10 && cidHash['TEN'] > 0) {
-		change = change - 10;
+		change -= 10;
 		cidHash['TEN'] -= 10;
 		resultHash['TEN'] += 10;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 5 && cidHash['FIVE'] > 0) {
-		change = change - 5;
+		change -= 5;
 		cidHash['FIVE'] -= 5;
 		resultHash['FIVE'] += 5;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 1 && cidHash['ONE'] > 0) {
-		change = change - 1;
+		change -= 1;
 		cidHash['ONE'] -= 1;
 		resultHash['ONE'] += 1;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.25 && cidHash['QUARTER'] > 0) {
-		change = change - 0.25;
+		change -= 0.25;
 		cidHash['QUARTER'] -= 0.25;
 		resultHash['QUARTER'] += 0.25;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.1 && cidHash['DIME'] > 0) {
-		change = change - 0.1;
+		change -= 0.1;
 		cidHash['DIME'] -= 0.1;
 		resultHash['DIME'] += 0.1;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.05 && cidHash['NICKEL'] > 0) {
-		change = change - 0.05;
+		change -= 0.05;
 		cidHash['NICKEL'] -= 0.05;
 		resultHash['NICKEL'] += 0.05;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.01 && cidHash['PENNY'] > 0) {
-		change = change - 0.01;
+		change -= 0.01;
 		cidHash['PENNY'] -= 0.01;
 		resultHash['PENNY'] += 0.01;
 		changeMoney(cidHash, change, resultHash);
