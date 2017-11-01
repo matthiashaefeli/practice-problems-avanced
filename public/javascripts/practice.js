@@ -94,47 +94,65 @@ function sym() {
 
 function changeMoney(cidHash, change, resultHash) {
 	if (change >= 100 && cidHash['ONE HUNDRED'] > 0) {
-		change -= 100;
+		test = Math.round(change * 100);
+		test -= 10000;
+		change = test / 100;
 		cidHash['ONE HUNDRED'] -= 100;
 		resultHash['ONE HUNDRED'] += 100;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 20 && cidHash['TWENTY'] > 0) {
-		change -= 20;
+		test = Math.round(change * 100);
+		test -= 2000;
+		change = test / 100;
 		cidHash['TWENTY'] -= 20;
 		resultHash['TWENTY'] += 20;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 10 && cidHash['TEN'] > 0) {
-		change -= 10;
+		test = Math.round(change * 100);
+		test -= 1000;
+		change = test / 100;
 		cidHash['TEN'] -= 10;
 		resultHash['TEN'] += 10;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 5 && cidHash['FIVE'] > 0) {
-		change -= 5;
+		test = Math.round(change * 100);
+		test -= 500;
+		change = test / 100;
 		cidHash['FIVE'] -= 5;
 		resultHash['FIVE'] += 5;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 1 && cidHash['ONE'] > 0) {
-		change -= 1;
+		test = Math.round(change * 100);
+		test -= 100;
+		change = test / 100;
 		cidHash['ONE'] -= 1;
 		resultHash['ONE'] += 1;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.25 && cidHash['QUARTER'] > 0) {
-		change -= 0.25;
+		test = Math.round(change * 100);
+		test -= 25;
+		change = test / 100;
 		cidHash['QUARTER'] -= 0.25;
 		resultHash['QUARTER'] += 0.25;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.1 && cidHash['DIME'] > 0) {
-		change -= 0.1;
+		test = Math.round(change * 100);
+		test -= 10;
+		change = test / 100;
 		cidHash['DIME'] -= 0.1;
 		resultHash['DIME'] += 0.1;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.05 && cidHash['NICKEL'] > 0) {
-		change -= 0.05;
+		test = Math.round(change * 100);
+		test -= 5;
+		change = test / 100;
 		cidHash['NICKEL'] -= 0.05;
 		resultHash['NICKEL'] += 0.05;
 		changeMoney(cidHash, change, resultHash);
 	} else if (change >= 0.01 && cidHash['PENNY'] > 0) {
-		change -= 0.01;
+		test = Math.round(change * 100);
+		test -= 1;
+		change = test / 100;
 		cidHash['PENNY'] -= 0.01;
 		resultHash['PENNY'] += 0.01;
 		changeMoney(cidHash, change, resultHash);
