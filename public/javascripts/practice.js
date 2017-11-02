@@ -209,4 +209,37 @@ function checkCashRegister(price, cash, cid) {
 		return resArray.reverse();
 	}
 }
+
+function arrayToObject(array) {
+	var object = {};
+	for (var i = 0; i < array.length; i++) {
+		object[array[i][1]] = array[i][0];
+	}
+	return object;
+}
+
+function objectToArray(object) {
+	var keyArray = [];
+	var finalArray = [];
+	for (var key in object) {
+		keyArray.push(key);
+	}
+	for (var i = 0; i < keyArray.length; i++) {
+		finalArray.push([object[keyArray.sort()[i]], keyArray.sort()[i]]);
+	}
+	return finalArray;
+}
+
+function updateInventory(arrayOne, arrayTwo) {
+	var objectOne = arrayToObject(arrayOne);
+	var objectTwo = arrayToObject(arrayTwo);
+	for (var key in objectTwo) {
+		if (objectOne.hasOwnProperty(key)) {
+			objectOne[key] += objectTwo[key];
+		} else {
+			objectOne[key] = objectTwo[key];
+		}
+	}
+	return objectToArray(objectOne);
+}
 // end of file
