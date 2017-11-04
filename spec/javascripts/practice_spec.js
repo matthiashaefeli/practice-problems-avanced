@@ -237,3 +237,9 @@ describe('permAlone', function() {
 		expect(permAlone('aaabb')).toEqual(12);
 	});
 });
+
+describe('Person', function() {
+	it('Fill in the object constructor with the following methods below:', function() {
+		expect(Person());
+	});
+});
