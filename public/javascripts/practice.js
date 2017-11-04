@@ -242,4 +242,6 @@ function updateInventory(arrayOne, arrayTwo) {
 	}
 	return objectToArray(objectOne);
 }
+
+function permAlone(str) {}
 // end of file
