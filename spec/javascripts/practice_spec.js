@@ -249,7 +249,7 @@ describe('Person', function() {
 	});
 	it('Fill in the object constructor with the following methods below:', function() {
 		var rob = new Person('Rob Red');
-		expect(rob.getFullName()).toEqual('Rod Red');
+		expect(rob.getFullName()).toEqual('Rob Red');
 	});
 	it('Fill in the object constructor with the following methods below:', function() {
 		var rob = new Person('Rob Red');

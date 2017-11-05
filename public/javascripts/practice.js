@@ -260,4 +260,15 @@ function perm(input) {
 	}
 	return permAlone;
 }
+
+var Person = function(firstandlast) {
+	this.getFullName = function() {
+		return firstandlast;
+	};
+
+	this.getFirstName = function() {
+		return firstandlast.split(' ')[0];
+	};
+};
+
 // end of file
