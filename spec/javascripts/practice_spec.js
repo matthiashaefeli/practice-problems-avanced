@@ -240,6 +240,25 @@ describe('permAlone', function() {
 
 describe('Person', function() {
 	it('Fill in the object constructor with the following methods below:', function() {
-		expect(Person());
+		var bob = new Person('Bob Ross');
+		expect(bob.getFirstName()).toEqual('Bob');
+	});
+	it('Fill in the object constructor with the following methods below:', function() {
+		var rob = new Person('Rob Red');
+		expect(rob.getLastName()).toEqual('Red');
+	});
+	it('Fill in the object constructor with the following methods below:', function() {
+		var rob = new Person('Rob Red');
+		expect(rob.getFullName()).toEqual('Rod Red');
+	});
+	it('Fill in the object constructor with the following methods below:', function() {
+		var rob = new Person('Rob Red');
+		rob.setFirstName('Bob');
+		expect(rob.getFirstName()).toEqual('Bob');
+	});
+	it('Fill in the object constructor with the following methods below:', function() {
+		var rob = new Person();
+		rob.setFullName('Bob Rob');
+		expect(rob.getFullName()).toEqual('Bob Rob');
 	});
 });
