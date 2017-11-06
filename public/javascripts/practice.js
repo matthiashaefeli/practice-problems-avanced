@@ -262,12 +262,30 @@ function perm(input) {
 }
 
 var Person = function(firstandlast) {
+	var fullName = firstandlast;
+
 	this.getFullName = function() {
-		return firstandlast;
+		return fullName;
 	};
 
 	this.getFirstName = function() {
-		return firstandlast.split(' ')[0];
+		return fullName.split(' ')[0];
+	};
+
+	this.getLastName = function() {
+		return fullName.split(' ')[1];
+	};
+
+	this.setFullName = function(newfullName) {
+		fullName = newfullName;
+	};
+
+	this.setFirstName = function(first) {
+		fullName = first + ' ' + fullName.split(' ')[1];
+	};
+
+	this.setLastName = function(last) {
+		fullName = fullName.split(' ')[0] + ' ' + last;
 	};
 };
 
