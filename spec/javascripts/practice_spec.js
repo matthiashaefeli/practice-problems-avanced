@@ -239,26 +239,31 @@ describe('permAlone', function() {
 });
 
 describe('Person', function() {
-	it('Fill in the object constructor with the following methods below:', function() {
+	it('returns first name of Person after create a new Person', function() {
 		var bob = new Person('Bob Ross');
 		expect(bob.getFirstName()).toEqual('Bob');
 	});
-	it('Fill in the object constructor with the following methods below:', function() {
+	it('returns last name of Person after create a new Person', function() {
 		var rob = new Person('Rob Red');
 		expect(rob.getLastName()).toEqual('Red');
 	});
-	it('Fill in the object constructor with the following methods below:', function() {
+	it('returns full name of Person after create a new Person', function() {
 		var rob = new Person('Rob Red');
 		expect(rob.getFullName()).toEqual('Rob Red');
 	});
-	it('Fill in the object constructor with the following methods below:', function() {
+	it('return first name after changing first name of Person', function() {
 		var rob = new Person('Rob Red');
 		rob.setFirstName('Bob');
 		expect(rob.getFirstName()).toEqual('Bob');
 	});
-	it('Fill in the object constructor with the following methods below:', function() {
+	it('return full name after creating new Person', function() {
 		var rob = new Person();
 		rob.setFullName('Bob Rob');
 		expect(rob.getFullName()).toEqual('Bob Rob');
+	});
+	it('return full name after changing last name of Person', function() {
+		var rob = new Person('Rod Stewart');
+		rob.setLastName('Hello');
+		expect(rob.getFullName()).toEqual('Rod Hello');
 	});
 });
