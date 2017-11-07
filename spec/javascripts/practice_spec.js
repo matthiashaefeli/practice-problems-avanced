@@ -289,3 +289,25 @@ describe('orbitalPeriod', function() {
 		]);
 	});
 });
+
+describe('pairwise', function() {
+	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
+		expect(pairwise([1, 4, 2, 3, 0, 5], 7)).toEqual(11);
+	});
+
+	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
+		expect(pairwise([1, 3, 2, 4], 4)).toEqual(1);
+	});
+
+	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
+		expect(pairwise([1, 1, 1], 2)).toEqual(1);
+	});
+
+	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
+		expect(pairwise([0, 0, 0, 0, 1, 1], 1)).toEqual(1);
+	});
+
+	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
+		expect(pairwise([], 100)).toEqual(0);
+	});
+});
