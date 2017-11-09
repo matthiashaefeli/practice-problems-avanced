@@ -304,7 +304,7 @@ describe('pairwise', function() {
 	});
 
 	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {
-		expect(pairwise([0, 0, 0, 0, 1, 1], 1)).toEqual(1);
+		expect(pairwise([0, 0, 0, 0, 1, 1], 1)).toEqual(10);
 	});
 
 	it('Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.', function() {

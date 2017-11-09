@@ -318,7 +318,21 @@ function orbitalPeriod(arr) {
 // Create a function, gerOrbPeriod() that will do the required work for any amount of objects.
 // c is (earthRadius + avgAlt) to the cube.
 // b is the square root of c divided by GM.
-// Create orbPeriod to store the product of a and b, with the Math.round() function applied to round up to the next whole number.
+// Create orbPeriod to store the product of a and b, with the Math.round()
+// function applied to round up to the next whole number.
 // Then we delete the key avgAlt, and add the new key and its value.
 
+function pairwise(array, arg) {
+	var result = 0;
+	for (var i = 0; i < array.length; i++) {
+		for (var index = i + 1; index < array.length; index++) {
+			if (array[i] + array[index] === arg) {
+				result += i + index;
+				array[i] = NaN;
+				array[index] = NaN;
+			}
+		}
+	}
+	return result;
+}
 // end of file
