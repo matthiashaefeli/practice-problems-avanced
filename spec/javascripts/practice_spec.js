@@ -204,40 +204,6 @@ describe('updateInventory', function() {
 	});
 });
 
-describe('permAlone', function() {
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('aab')).toEqual(2);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('aaa')).toEqual(0);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('aabb')).toEqual(8);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('abcdefa')).toEqual(3600);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('abfdefa')).toEqual(2640);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('zzzzzzzz')).toEqual(0);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('a')).toEqual(1);
-	});
-
-	it('Return the number of total permutations of the provided string that dont have repeated consecutive letters', function() {
-		expect(permAlone('aaabb')).toEqual(12);
-	});
-});
-
 describe('Person', function() {
 	it('returns first name of Person after create a new Person', function() {
 		var bob = new Person('Bob Ross');
